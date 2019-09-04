@@ -1,16 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { alumno } from '../alumno';
+import { ALUMNO } from '../mock-alumnos';
+
 @Component({
 selector: 'app-alumnos',
 templateUrl: './alumnos.component.html',
 styleUrls: ['./alumnos.component.css']
 })
 export class AlumnosComponent implements OnInit {
-alumno: alumno= {
-id: 1,
-name: 'David'
-};
+
+  alumnos = ALUMNO;
+  selectedAlumno: alumno;
+
 constructor() { }
 ngOnInit() {
 }
+
+onSelect(alumno: alumno): void {
+  this.selectedAlumno = alumno;
+
+}
+
 }
